@@ -12,19 +12,22 @@ def unit_test():
 
 
 def read_yaml_files():
-    read_yaml(Path("tests\data\demo.yaml"))
+    read_yaml(Path("tests/data/demo.yaml"))
     assert True
 
 
 yaml_file = [
-    "tests\data\demo.yaml",
-    "tests\data\empty.yaml",
+    "tests/data/demo.yaml",
+    "tests/data/empty.yaml",
 ]
 
+def read_test_yaml_empty():
+    with pytest.raises(ValueError):
+        read_yaml(Path(yaml_file[0]))
 
-def test_read_yaml_empty():
+def testRead_yaml_empty():
     content = read_yaml(Path(yaml_file[0]))
-    assert isinstance(content,ConfigBox)
+    assert isinstance(content, ConfigBox)
 
 
 def read_yaml_return_type():
@@ -38,4 +41,4 @@ def read_yaml_bad_type(path_to_yaml):
         read_yaml(path_to_yaml)
 
 
-# "D:\DataScience-60\SentimentAnalysis47"
+# "D:/DataScience-60/SentimentAnalysis47"
