@@ -1,5 +1,5 @@
 --- 
-name: "CV application"
+name: "Sentiment Analysis"
 
 on:
   push:
